@@ -1,0 +1,16 @@
+R 700 500
+
+NO ./textures/bluestone.xpm
+SO ./textures/eagle.xpm
+WE ./textures/purplestone.xpm
+EA ./textures/mossy.xpm
+S ./textures/nachete.xpm
+
+F 255,255,255
+C 0,0,0
+
+111111
+100101
+102001
+1100N1
+111111
