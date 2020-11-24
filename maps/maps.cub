@@ -1,4 +1,4 @@
-R 700 500
+R 702 503
 NO ./textures/bluestone.xpm
 SO ./textures/purplestone.xpm
 WE ./textures/mossy.xpm

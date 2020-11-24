@@ -6,7 +6,7 @@
 /*   By: parmarti <parmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 13:17:31 by parmarti          #+#    #+#             */
-/*   Updated: 2020/09/13 14:03:08 by parmarti         ###   ########.fr       */
+/*   Updated: 2020/09/13 17:55:58 by parmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void				draw_texture(t_cub *cub, int x)
 		* tex_wall.height / cub->rc.line_height;
 		if (tex_y < 0)
 			return ;
-		cub->get_data[x + y * (cub->size_line / 4)] = \
+		cub->get_data[x + y * cub->map.width] = \
 		tex_wall.get_data[tex_x + tex_y * tex_wall.width];
 	}
 }

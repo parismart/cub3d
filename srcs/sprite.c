@@ -6,7 +6,7 @@
 /*   By: parmarti <parmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 20:24:12 by parmarti          #+#    #+#             */
-/*   Updated: 2020/09/13 14:20:12 by parmarti         ###   ########.fr       */
+/*   Updated: 2020/09/13 17:59:20 by parmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	draw_sprite(t_cub *cub, int x, int i)
 		{
 			if (x >= 0 && x < cub->map.width && y >= 0 && y < cub->map.height)
 			{
-				cub->get_data[x + y * (cub->size_line / 4)] = \
+				cub->get_data[x + y * cub->map.width] = \
 					cub->sprite[i].color;
 			}
 		}

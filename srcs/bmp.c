@@ -6,7 +6,7 @@
 /*   By: parmarti <parmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 14:23:51 by parmarti          #+#    #+#             */
-/*   Updated: 2020/09/11 17:56:37 by parmarti         ###   ########.fr       */
+/*   Updated: 2020/09/13 17:28:25 by parmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	header(t_bmp *bmp, t_cub *cub)
 	bmp->header[3] = (bmp->size >> 8);
 	bmp->header[4] = (bmp->size >> 16);
 	bmp->header[5] = (bmp->size >> 24);
-	bmp->header[10] = 14 + 40;
+	bmp->header[10] = 54;
 	bmp->header[14] = 40;
 	bmp->header[18] = (cub->map.width);
 	bmp->header[19] = (cub->map.width >> 8);
@@ -66,7 +66,7 @@ void		bmp(t_cub *cub)
 	if (!(bmp = (t_bmp *)malloc(sizeof(t_bmp))))
 		exit_game(cub, 6);
 	ft_bzero(bmp, sizeof(t_bmp));
-	bmp->padding = (4 - (cub->map.width * 3) % 4) % 4;
+	bmp->padding = cub->map.width % 4;
 	bmp->fd = open("cub3d.bmp", O_WRONLY | O_TRUNC | O_CREAT, 0777);
 	if (bmp->fd < 0)
 	{

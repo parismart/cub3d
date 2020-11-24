@@ -6,7 +6,7 @@
 /*   By: parmarti <parmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 20:06:14 by parmarti          #+#    #+#             */
-/*   Updated: 2020/09/13 13:07:11 by parmarti         ###   ########.fr       */
+/*   Updated: 2020/09/13 18:39:22 by parmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static void	draw_screen(t_cub *cub, int x, int y)
 	y = cub->rc.draw_end;
 	while (y < cub->map.height)
 	{
-		cub->get_data[x + y * (cub->size_line / 4)] = cub->map.floor;
-		cub->get_data[x + (cub->map.height - y - 1) * (cub->size_line / 4)] = \
-			cub->map.ceiling;
+		cub->get_data[(y * cub->size_line + x * 4) / 4] = cub->map.floor;
+		cub->get_data[x + (cub->map.height - y - 1) * cub->map.width] = \
+		cub->map.ceiling;
 		y++;
 	}
 }
